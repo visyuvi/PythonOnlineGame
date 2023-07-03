@@ -32,10 +32,11 @@ def threaded_client(conn):
         except e:
             print(e)
             break
+    print("Lost connection")
+    conn.close()
 
 
 while True:
     conn, addr = s.accept()
     print("Connected to:", addr)
-
     start_new_thread(threaded_client, (conn,))
