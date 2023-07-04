@@ -40,7 +40,7 @@ def threaded_client(conn, p, gameId):
                         game.reset()
 
                     elif data != "get":
-                        game.player(p, data)
+                        game.play(p, data)
 
                     reply = game
                     conn.sendall(pickle.dumps(reply))
